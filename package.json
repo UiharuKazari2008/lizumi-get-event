@@ -1,0 +1,8 @@
+{
+  "name": "get-event",
+  "version": "1.0.0",
+  "dependencies": {
+    "ical-expander": "^3.0.0",
+    "ical.js": "^1.4.0"
+  }
+}
