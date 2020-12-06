@@ -3,7 +3,7 @@ const fs = require('fs');
 const https = require('https');
 const args = process.argv.slice(2)
 
-const calenderUrl = 'webcal://p31-caldav.icloud.com/published/2/MTAwMDA1MTk0NjEwMDAwNZb0-_EO5Cnp-ZlXblyvC1oGM5r9u_D_jMdLrYgLr4LmMqEW2MlgTraFMH60AD6KRXaFQeQSa_4MXcwWyRykHl4'
+const calenderUrl = 'webcal://p31-caldav.icloud.com/published/2/MTAwMDA1MTk0NjEwMDAwNZb0-_EO5Cnp-ZlXblyvC1qDRNXRRgiFqev0agb0RgqtE0kd9GenzfLNx8AAH5xbgfDXYxGT8WZ0KGr7a4Ld5S0'
 
 function parseCalender() {
     https.get(calenderUrl.replace('webcal://', 'https://'), (resp) => {
