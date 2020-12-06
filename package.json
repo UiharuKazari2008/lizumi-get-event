@@ -2,7 +2,9 @@
   "name": "get-event",
   "version": "1.0.0",
   "dependencies": {
+    "html-to-json-data": "^1.6.0",
     "ical-expander": "^3.0.0",
-    "ical.js": "^1.4.0"
+    "ical.js": "^1.4.0",
+    "parser-html": "^1.0.6"
   }
 }
