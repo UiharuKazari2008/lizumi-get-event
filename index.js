@@ -34,18 +34,18 @@ function printResult(data){
     });
     const now = new Date();
     const start = new Date(now.getTime());
-    const end = new Date(now.getTime() + 30 * 60 * 1000);
+    const end = new Date(now.getTime() + 60 * 60 * 1000);
     const cal = ical.between(start, end);
 
     //console.log(`start ${start} to ${end}`);
     //console.log(cal.occurrences[0].item.component.jCal[1][3][3])
+    //console.log(cal)
 
     let foundEvents = [];
     if (cal && cal.events.length > 0) {
-
         cal.events.forEach(function (event){
-            if (event.component.jCal[1][6][3].includes("P1 ") || event.component.jCal[1][6][3].includes("P2 ") ) {
-                foundEvents.push(event.component.jCal[1][6][3].replace("P1 ", "").replace("P2 ", "")) }
+            if (event.component.jCal[1][3][3].includes("P1 ") || event.component.jCal[1][3][3].includes("P2 ") ) {
+                foundEvents.push(event.component.jCal[1][3][3].replace("P1 ", "").replace("P2 ", "")) }
         })
     } else if (cal && cal.occurrences.length > 0) {
         cal.occurrences.forEach(function (event){
@@ -66,6 +66,7 @@ function printResult(data){
 }
 
 process.on('uncaughtException', function(err) {
+    //console.log(err)
     console.log('NOEVENT')
     process.exit(1)
 });
