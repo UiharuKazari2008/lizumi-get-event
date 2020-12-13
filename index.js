@@ -34,7 +34,7 @@ function printResult(data){
     });
     const now = new Date();
     const start = new Date(now.getTime());
-    const end = new Date(now.getTime() + 60 * 60 * 1000);
+    const end = new Date(now.getTime() + 15 * 60 * 1000);
     const cal = ical.between(start, end);
 
     //console.log(`start ${start} to ${end}`);
