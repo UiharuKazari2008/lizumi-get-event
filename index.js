@@ -40,7 +40,13 @@ function printResult(data){
     let foundEvents = []; // Blank list of events
     Object.values(cal).forEach(function(cal_type){
         cal_type.forEach(function(events){ // Process Single and Reoccurring Events
-            events.item.component.jCal[1].forEach(function (elements){ // Dig to the shit we actually want (fuck jcal)
+            let element = undefined
+            if (events.item) {
+                element = events.item
+            } else {
+                element = events
+            }
+            element.component.jCal[1].forEach(function (elements){ // Dig to the shit we actually want (fuck jcal)
                 if (elements[0] === 'summary') { // Bruteforce our way to the fucking summary element sense its not predictable
                     if (elements[3].substring(0, 1) === 'P') { // Find Events that begin with "P", this is a internal naming if recordings events
                         foundEvents.push(elements[3].substring(3)) // Remove the trigger term "P1 Profound Sounds" => "Profound Sounds"
